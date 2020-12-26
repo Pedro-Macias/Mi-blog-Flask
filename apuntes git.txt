@@ -1,0 +1,182 @@
+INICIAMOS LA CONSOLA GIT
+
+pwd                 nos dice en que directorio estamos
+cd carpeta          vamos a la carpeta que queremos
+ls                  vemos los archivos que hay en la carpeta
+
+INICIALIZAR EL PROYECTO
+
+git init            inicializamos el PROYECTO
+
+VER QUE ARCHIVOS TENEMOS TRABAJANDO  
+
+git status          ver que archivos estamos TRABAJANDO
+
+AGREGAR ARCHIVOS AL AREA DE TRABAJANDO
+
+git add nombreArchivo   agrega el archivos
+git add -A              agrega todos los archivos
+git status              vemos los archivos en verde 
+
+UTILIDAD
+
+COFIGURAR
+git config --global user.email "email.com"
+git config --globla user.name "nombre"
+
+PRIMER PUNTO DE PARTIDA
+git commit -m "descripcion"
+
+CAMBIAR NOMBRE AL commit
+git commit -- amend -m "descripcion"
+
+git log         ver las versiones del programa
+
+IR A UNA  PUNTO ANTERIOR O POTERIOR
+git commit codigo del commit
+
+git commit version
+
+VOLVER EN EL RETROCESO DE LOS CAMBIOS
+
+git checkout -- archivo.kj      retrocede los CAMBIOS
+
+ELIMINAR EL CONMIT 
+git reset --soft        no toca el codigo - quedaria pendiente en el status
+git reset --hard        borra todo el commit 
+
+VER LOS CAMBIOS QUE HAY EN EL DOCUMENTOS
+
+git diff archivo.kl         nos muestra las diferencias que hay en el archivo
+
+SI QUEREMOS AGREGAR TEXTOS Y CARPETAS QUE QUEREMOS IGNORAR
+
+creamos el archivo  .gitingnore  - donde van todos los archivos que no queremos agregar
+
+
+CREAR VARIAS  RAMAS - VERSIONES  - o PROYECTO
+
+git branch              te indica las versiones que tienes
+git branch version1     crear otra version 
+git checkout version1   cambiar a la otra version
+git checkout -b version crea otra version y nos lleva a ella
+
+FUSIONAR RAMAS O VERSIONES
+git merge rama a absorver
+
+BORRAR LAS RAMAS 
+git branch -D
+
+_____________________________________________
+
+ISSUES
+los issues son una forma de continuar , 
+mejorar o solucionar un error en nuestro repositorios (proyectos)
+se dejan tareas pendientes , comentar . etc
+
+________________________________________________
+
+MILESTONES
+son grupos de issues que aplican para un proyecto , caraceteristica o periodo de tiempo
+sirven para organizarse
+
+____________________________________________________
+
+LABELS
+son una manera de organizar diferentes tipod de problemas
+son etiquetas de aviso
+
+
+
+
+
+
+____________________________
+GITUP
+______________________________
+
+una vez que entramos , creamos un repositorio nuevo
+
+nos da una direccion 
+
+CONECTARSE AL REPOSITORIO 
+git remote add origin http//direciion que nos de git
+
+COMPROBAR QUE ESTA CONECTADO
+git remote -v
+
+DESCONECTAR DEL REPOSITORIO
+git remote remove origin
+
+
+--------
+SUBIR PROYECTO AL REPOSITORIO
+git push -u origin  NOMBRE DE LA VERSION
+
+CAMBIAR UN commit
+git push origin NOMBRE VERSION -f
+
+USUARIO Y CONTRASEÑA
+pin.macias@gmail.com 
+Maveas2005
+
+DESCARGAR REPOSITORIO 
+nos colocamos en la carpeta que queremos
+luego
+git clone https// direccion del repositorio
+
+----------------
+CREAR TAGS
+
+las tag anotadas
+son almacenadas como objetos completos dentro de 
+la fase de Git y contine mas informacion
+
+las tag ligeras
+son otra fora de crear tags , mas simples y con poca 
+informacion
+
+TAG anotadas
+
+git tag -a v8 -m "version 0.8 de nuestro proyecto" numero de log
+
+BORRR TAG
+git tag -d v8
+BORRARLO DE GITHUP
+git push origin :refs/tags/v2.0.3
+
+SUBIR LOS TAG
+DE UNO EN UNO
+git push origin v0.8
+
+TODOS A LA VEZ
+git push origin --tags
+
+-----------------------
+WORKFLOWS
+------------------------
+PROYECTOS EN EQUIPO
+
+es parecido a trabajar solo con la excepcion de que
+habra commits de otras personas
+
+---------------------
+GITHUB PAGES
+
+Con Github Pages podemos generar un sitio web a partier de nuestra
+organizacion o proyecto , muy util para portafolios,
+bogs  y todo titpo de paginas del lado del front-end 
+
+
+CREAR REPOSITORIO
+usuario.github.io
+
+
+git branch gh-pages
+git branch
+git branch origin gh-pages 
+
+------------
+GIT HOOKS
+-------------
+
