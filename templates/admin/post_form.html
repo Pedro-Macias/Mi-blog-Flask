@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if post_id %}
+            Modificando el Post {{ post_id}}
+        {% else %}
+            Nuevo Post
+        {% endif %}
+    </title>
+</head>
+<body>
+    {% if post_id %}
+            Modificando el Post {{ post_id}}
+        {% else %}
+            Nuevo Post
+        {% endif %}
+
+</body>
+</html>
+
+{% extends "plantilla.html" %}
+
+{%block title%}
+    {% if post_id %}
+        Modificando el Post {{ post_id}}
+    {% else %}
+        Nuevo Post
+    {% endif %}
+{%endblock%}
+
+{% block body %}
+    {% if post_id %}
+    <h1 class='fuente ml-1'>Modificando el Post {{ post_id}}</h1>
+    {% else %}
+    <h1 class='fuente ml-1'>Nuevo Post</h1>
+    {% endif %}
+{% endblock %}
