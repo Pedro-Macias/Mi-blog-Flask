@@ -1,40 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% if post_id %}
-            Modificando el Post {{ post_id}}
-        {% else %}
-            Nuevo Post
-        {% endif %}
-    </title>
-</head>
-<body>
-    {% if post_id %}
-            Modificando el Post {{ post_id}}
-        {% else %}
-            Nuevo Post
-        {% endif %}
-
-</body>
-</html>
 
 {% extends "plantilla.html" %}
 
-{%block title%}
+{%block title%} 
     {% if post_id %}
-        Modificando el Post {{ post_id}}
+            {{ form.titulo.data}}
     {% else %}
-        Nuevo Post
+            Nueva entrada
     {% endif %}
 {%endblock%}
 
 {% block body %}
-    {% if post_id %}
-    <h1 class='fuente ml-1'>Modificando el Post {{ post_id}}</h1>
-    {% else %}
-    <h1 class='fuente ml-1'>Nuevo Post</h1>
-    {% endif %}
+    <form action="" method="POST" novalidate>
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.titulo.label}}
+            {{ form.titulo(size=20) }} <br>
+            {% for error in form.titulo.errors %}
+            <span class='text-danger'>{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.sub_titulo.label}}
+            {{ form.sub_titulo(size=40) }} <br>
+            {% for error in form.sub_titulo.errors %}
+            <span class='text-danger'>{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.contenido.label}}
+            {{ form.contenido }} <br>
+            {% for error in form.contenido.errors %}
+            <span class='text-danger'>{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+
+    
+
+
 {% endblock %}

@@ -3,5 +3,11 @@
 {%block title%} mi Blog {%endblock%}
 
 {% block body %}
-    <h1 class='fuente ml-1'> hay {{ num_posts }} posts</h1>
+    <h1 class="text-primary">Mis post</h1>
+<ul>
+    {% for post in posts %}
+        <li> {{ post.titulo }}</li>
+    {% endfor %}
+</ul>
+    
 {% endblock %}

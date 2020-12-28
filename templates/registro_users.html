@@ -1,0 +1,33 @@
+{% extends "plantilla.html" %}
+
+{%block title%} {{slug_tittle}} {%endblock%}
+
+{% block body %}
+    <form action="" method="POST" novalidate>
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.nombre.label}}
+            {{ form.nombre(size=64) }} <br>
+            {% for error in form.nombre.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.email.label}}
+            {{ form.email }} <br>
+            {% for error in form.nombre.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.password.label}}
+            {{ form.password }} <br>
+            {% for error in form.nombre.errors %}
+            <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}
