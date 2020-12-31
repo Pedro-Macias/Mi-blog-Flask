@@ -3,6 +3,11 @@
 {%block title%} {{slug_tittle}} {%endblock%}
 
 {% block body %}
+
+    {% if error %}
+        <p class="text-danger"><strong>Error:</strong> {{ error }}
+    {% endif %}
+
     <form action="" method="POST" novalidate>
         {{ form.hidden_tag() }}
         <div>

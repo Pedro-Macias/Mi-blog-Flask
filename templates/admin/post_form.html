@@ -19,13 +19,7 @@
             <span class='text-danger'>{{ error }}</span>
             {% endfor %}
         </div>
-        <div>
-            {{ form.sub_titulo.label}}
-            {{ form.sub_titulo(size=40) }} <br>
-            {% for error in form.sub_titulo.errors %}
-            <span class='text-danger'>{{ error }}</span>
-            {% endfor %}
-        </div>
+        
         <div>
             {{ form.contenido.label}}
             {{ form.contenido }} <br>

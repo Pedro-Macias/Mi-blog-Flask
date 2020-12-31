@@ -6,7 +6,7 @@
     <h1 class="text-primary">Mis post</h1>
 <ul>
     {% for post in posts %}
-        <li> {{ post.titulo }}</li>
+        <li><a href="{{ post.public_url() }}">{{ post.titulo }}</a></li>
     {% endfor %}
 </ul>
     

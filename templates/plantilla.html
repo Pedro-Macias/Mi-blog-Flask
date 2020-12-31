@@ -12,6 +12,20 @@
         <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
     </head>
     <body>
+        <div>
+            <ul class="user-info">
+                <li class="fuente"><a href="{{ url_for('index') }}">Home</a></li>
+                {% if current_user.is_anonymous %}
+                    <li class="fuente"><a class="text-danger" href="{{ url_for('login') }}">Login</a></li>
+                    <li> | </li>
+                    <li class="fuente text-danger"><a href="{{ url_for('show_registro_users') }}">Registrar</a></li>
+                {% else %}
+                    <li class="fuente">{{ current_user.name }}</li>
+                    <li> | </li>
+                    <li class="fuente"><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% endif %}
+            </ul>
+        </div>
         
             <div class= 'container pt-3'>
             {% block body %}
