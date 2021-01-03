@@ -1,6 +1,5 @@
 
 {% extends "plantilla.html" %}
-
 {%block title%} 
     {% if post_id %}
             {{ form.titulo.data}}
@@ -12,9 +11,9 @@
 {% block body %}
     <form action="" method="POST" novalidate>
         {{ form.hidden_tag() }}
-        <div>
+        <div class="form-group">
             {{ form.titulo.label}}
-            {{ form.titulo(size=20) }} <br>
+            {{ form.titulo(class='form-control') }} <br>
             {% for error in form.titulo.errors %}
             <span class='text-danger'>{{ error }}</span>
             {% endfor %}
@@ -22,13 +21,13 @@
         
         <div>
             {{ form.contenido.label}}
-            {{ form.contenido }} <br>
+            {{ form.contenido (class='form-control')}} <br>
             {% for error in form.contenido.errors %}
             <span class='text-danger'>{{ error }}</span>
             {% endfor %}
         </div>
         <div>
-            {{ form.submit() }}
+            {{ form.submit(class='form-control btn btn-primary') }}
         </div>
     </form>
 
